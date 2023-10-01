@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumbs {
+  margin: 10px;
+  display: flex;
+  position: relative;
+  top: 20px;
+  left: 30px;
+  max-width: 700px;
+  a{
+    margin-right: 20px;
+    &:hover{
+      color: #2d7d7d;
+    }
+  }
+
+  &_link {
+    text-decoration: none;
+    color: black;
+
+    &::marker {
+      text-align: end !important;
+    }
+  }
+}
+.container {
+  margin: 100px auto;
+
+  .row {
+    justify-content: center;
+    display: flex;
+
+    .col {
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      display: flex;
+      justify-content: center;
+
+      .product_details {
+
+        .title {
+          margin-bottom: 20px;
+          color: #252525;
+          font-size: 42px;
+          line-height: 1.2em;
+          font-weight: 700;
+        }
+
+        .description, .allergies {
+          margin-bottom: 20px;
+          line-height: 1.6em;
+          color: #6D6D6D;
+        }
+
+        .weight {
+          margin-bottom: 10px;
+          display: inline-block;
+          font-size: 16px;
+          line-height: 1;
+          padding: 5px;
+          margin-top: 5px;
+        }
+
+        .controls {
+          display: flex;
+          align-items: center;
+          padding: 30px 0;
+
+          .price {
+            color: #252525;
+            font-weight: 400;
+            font-size: 20px;
+            width: 84px;
+            margin-left: 50px;
+          }
+
+          .input_button {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 10px;
+            color: #252525;
+            font-size: 16px;
+            line-height: 16px;
+            border: none;
+
+            button {
+              width: 30px;
+              height: 30px;
+              font-size: 18px;
+              font-weight: 700;
+              cursor: pointer;
+              transition: 0.35s;
+              line-height: 24px;
+              color: #5a5a5a;
+              background-color: #F5F5F5;
+              border-radius: 5px;
+              padding-bottom: 4px;
+              margin: 4px;
+              border: none;
+              &:hover{
+                background-color: #2d7d7d;
+                color: white;
+              }
+            }
+
+            input {
+              width: 30px;
+              height: 44px;
+              font-weight: 600;
+              text-align: center;
+              border: none;
+              outline: none;
+            }
+          }
+        }
+        .button{
+          display: flex;
+          justify-content: space-between;
+
+          .btn{
+            display: inline-block;
+            vertical-align: bottom;
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+            text-decoration: none;
+            background: none;
+            transition: 0.3s;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 700;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            border: 2px solid #2d7d7d;
+            border-radius: 6px;
+            padding: 18px 30px;
+          }
+          .green {
+            color: #FFF;
+            background: #2d7d7d;
+
+            &:hover {
+              background-color: white;
+              color: #2d7d7d;
+            }
+          }
+          .white {
+            color: #2d7d7d;
+            background-color: #FFF;
+
+            &:hover {
+              background-color: #2d7d7d;
+              color: #FFF;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 320px) {
+  .breadcrumbs {
+    display: none;
+  }
+  .container {
+    margin: 100px auto;
+    .row {
+      .col {
+        img{
+          width: 320px;
+        }
+        .product_details {
+          .title {
+            margin-bottom: 10px;
+            font-size: 22px;
+            line-height: 1.2em;
+            font-weight: 700;
+          }
+
+          .description, .allergies {
+            margin-bottom: 18px;
+            line-height: 1.6em;
+          }
+
+          .weight {
+            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 1;
+            padding: 5px;
+            margin-top: 5px;
+          }
+
+          .controls {
+            padding: 20px 0;
+          }
+          .button{
+            display: flex;
+            flex-direction: column;
+
+            .btn{
+              font-size: 14px;
+              padding: 14px 30px;
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+  .btn{
+    padding: 18px 4px!important;
+  }
+}
+

@@ -1,0 +1,259 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.section{
+  .space{
+    height: 60px;
+  }
+  .container{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    .row{
+      margin-right: -15px;
+      margin-left: -15px;
+      .col-12{
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        .contact-main-title{
+          font-weight: 700;
+          font-size: 42px;
+          line-height: 1.2em;
+          margin-bottom: 40px;
+          span{
+            color: #2d7d7d;
+          }
+        }
+
+        .contact-info{
+          justify-content: flex-start;
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+          margin-bottom: 85px;
+          .contact-item{
+            margin-left: 2%;
+            margin-right: 2%;
+            display: block;
+            margin-top: 20px;
+            width: 29.3333%;
+            .title{
+              font-weight: 500;
+              margin-bottom: 25px;
+              font-size: 20px;
+              line-height: 1.3em;
+            }
+            .contact-grey{
+              display: block;
+              width: 100%;
+              background: #F5F5F5;
+              border-radius: 6px;
+              padding: 20px 40px;
+              .contact-line{
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
+                .contact-icon{
+                  display: inline-block;
+                  vertical-align: top;
+                  margin-right: 30px;
+                  width: 30px;
+                  text-align: center;
+                }
+                .text{
+                  color: #6D6D6D;
+                  display: inline-block;
+                  vertical-align: top;
+                  line-height: 30px;
+                  font-size: 18px;
+                  span{
+                    display: flex;
+                    flex-direction: column;
+                  }
+                  b{
+                    font-weight: 500;
+                    color: #2D2C2C;
+                    margin: 0 2px;
+                    a{
+                      color: #2d7d7d;
+                      font-weight: 500;
+                      text-decoration: none;
+                      transition: 0.25s;
+                      border-bottom: 2px solid;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) and (min-width: 320px) {
+  .section{
+    .space{
+      height: 30px;
+    }
+    .container{
+      .row{
+        .col-12{
+          .contact-main-title{
+            font-size: 24px;
+            margin-bottom: 20px;
+          }
+
+          .contact-info{
+            flex-direction: column;
+            .contact-item{
+              margin-left: 0;
+              margin-right: 0;
+              display: block;
+              margin-top: 10px;
+              width: 100%;
+              .title{
+                margin-bottom: 20px;
+                font-size: 16px;
+              }
+              .contact-grey{
+                padding: 15px 10px;
+                .contact-line{
+                  margin-bottom: 5px;
+                  .contact-icon{
+                    margin-right: 10px;
+                  }
+                  .text{
+                    font-size: 14px;
+                    span{
+                      display: flex;
+                      flex-direction: column;
+                    }
+                    b{
+                      font-weight: 500;
+                      color: #2D2C2C;
+                      margin: 0 2px;
+                      a{
+                        color: #2d7d7d;
+                        font-weight: 500;
+                        text-decoration: none;
+                        transition: 0.25s;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 768px) {
+  .section{
+    .space{
+      height: 60px;
+    }
+    .container{
+      .row{
+        .col-12{
+          .contact-main-title{
+            font-size: 38px;
+            margin-bottom: 40px;
+          }
+
+          .contact-info{
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 40px;
+
+            .contact-item{
+              display: block;
+              margin-top: 0;
+              margin-left: 2%;
+              margin-right: 2%;
+              width: 46%;
+              margin-bottom: 40px;
+              .title{
+                margin-bottom: 20px;
+                font-size: 16px;
+              }
+              .contact-grey{
+                padding: 15px 10px;
+                .contact-line{
+                  margin-bottom: 5px;
+                  .contact-icon{
+                    margin-right: 10px;
+                  }
+                  .text{
+                    font-size: 15px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1440px) and (min-width: 1199px) {
+  .section{
+    .container {
+      .row {
+        .col-12 {
+          .contact-info {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 40px;
+
+            .contact-item {
+              display: block;
+              margin-top: 0;
+              margin-left: 2%;
+              margin-right: 2%;
+              width: 29.3333%;
+              margin-bottom: 40px;
+
+              .title {
+                margin-bottom: 20px;
+                font-size: 16px;
+              }
+
+              .contact-grey {
+                padding: 20px 30px;
+
+                .contact-line {
+                  margin-bottom: 5px;
+
+                  .contact-icon {
+                    margin-right: 10px;
+                  }
+
+                  .text {
+                    font-size: 15px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

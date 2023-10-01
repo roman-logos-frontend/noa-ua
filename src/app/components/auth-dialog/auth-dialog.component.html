@@ -1,0 +1,56 @@
+<div class="container">
+  <form [formGroup]="loginForm">
+    <div class="title">{{ !isLogin ? 'Вхід у кабінет' : 'Зареєструватись' }}</div>
+    <div class="form-group" *ngIf="!isLogin">
+      <mat-form-field  color="primary">
+        <mat-label>*Ваш email</mat-label>
+        <input matInput type="email" formControlName="email">
+      </mat-form-field>
+    </div>
+    <div class="form-group" *ngIf="!isLogin">
+      <mat-form-field  color="primary">
+        <mat-label>*Пароль</mat-label>
+        <input matInput type="password" formControlName="password">
+      </mat-form-field>
+    </div>
+  </form>
+
+  <form [formGroup]="registerForm">
+    <div class="form-group" *ngIf="isLogin">
+      <mat-form-field  color="primary">
+        <mat-label>*Ваше імя</mat-label>
+        <input matInput type="text" formControlName="firstName">
+      </mat-form-field>
+      <mat-form-field  color="primary">
+        <mat-label>*Ваше прізвище</mat-label>
+        <input matInput type="text" formControlName="lastName">
+      </mat-form-field>
+    </div>
+    <div class="form-group" *ngIf="isLogin">
+      <mat-form-field  color="primary">
+        <mat-label>*Ваш телефон</mat-label>
+        <input matInput type="number" formControlName="phoneNumber">
+      </mat-form-field>
+    </div>
+    <div class="form-group" *ngIf="isLogin">
+      <mat-form-field  color="primary">
+        <mat-label>*Ваш email</mat-label>
+        <input matInput type="email" formControlName="email">
+      </mat-form-field>
+    </div>
+    <div class="form-group" *ngIf="isLogin">
+      <mat-form-field  color="primary">
+        <mat-label>*Пароль</mat-label>
+        <input (input)="checkConfirmedPassword()" matInput type="password" formControlName="password">
+      </mat-form-field>
+      <mat-form-field  color="primary">
+        <mat-label>*Підтвердження паролю</mat-label>
+        <input (input)="checkConfirmedPassword()" matInput type="password" formControlName="confirmationPassword">
+      </mat-form-field>
+    </div>
+    <mat-error *ngIf="checkVisibilityError('confirmationPassword', 'matchError')">Паролі не співпадають</mat-error>
+    <button mat-raised-button color="primary" type="button" *ngIf="!isLogin" (click)="loginUser()" mat-dialog-close>Увійти в кабінет</button>
+    <a (click)="changeIsLogin()">{{ !isLogin ? 'Dont have account yet?' : 'Already have an account?' }}</a>
+    <button mat-raised-button color="primary" type="button" *ngIf="isLogin" (click)="registerUser()" mat-dialog-close>Зареєструватись</button>
+  </form>
+</div>

@@ -1,0 +1,14 @@
+<div class="space"></div>
+<div class="container">
+  <div class="menu">
+    <div class="nav">
+      <button class="nav_btn" [routerLink]="[ 'category' ]" type="button">Категорії</button>
+      <button class="nav_btn" [routerLink]="[ 'product' ]"  type="button">Товари</button>
+      <button class="nav_btn" [routerLink]="[ 'orders' ]"  type="button">Замовлення</button>
+      <button class="nav_btn" (click)="logout()" type="button">Log out</button>
+    </div>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

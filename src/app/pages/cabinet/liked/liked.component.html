@@ -1,0 +1,35 @@
+<div class="container">
+  <section>
+    <div class="cont">
+      <div class="box">
+        <div class="box_row">
+          <div class="box_row_col" *ngFor="let product of userFavorites">
+            <div class="product">
+              <div class="product_img_wrap">
+                <img [routerLink]="[ '/product/'+product.name,  product.id ]" class="blog_img" [src]="product.imagePath">
+                <div class="product_top-right">
+                  <button class="fav-btn" [ngClass]="{'activeFav' : isFavorite(product.id)}" (click)="addToFavorite(product)"></button>
+                </div>
+              </div>
+              <div class="product_title">
+                <h1 [routerLink]="[ '/product/'+product.category.path,  product.id ]" class="blog_name">{{product.name}}</h1>
+                <h3 class="blog_weight">{{product.price}}</h3>
+              </div>
+              <div class="product_info">
+                <p>{{product.description | slice:0:118}}</p>
+              </div>
+              <div class="product_controls">
+                <div class="input_button">
+                  <button (click)="productCount(product, false)" type="button">-</button>
+                  <input [value]="product.count" min="1" max="999" readonly>
+                  <button (click)="productCount(product, true)" type="button">+</button>
+                </div>
+                <button class="product_controls_btn" (click)="addToBasket(product)">ЗАМОВИТИ</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

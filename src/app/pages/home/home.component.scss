@@ -1,0 +1,172 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 100%;
+  box-sizing: border-box;
+  .baner{
+    width: 100%;
+    height: 100%;
+    &-img{
+      display: block;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 803px;
+      background-image: url(https://noa.ua/wp-content/uploads/2023/08/thai-site-banner-copy.png-nov-1550x630.png)
+    }
+  }
+  .prod-sec{
+    display: block;
+    width: 100%;
+    .container{
+      width: 100%;
+      padding-left: 60px;
+      padding-right: 60px;
+      .row{
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        .col-12{
+          .product-title{
+            font-size: 42px;
+            line-height: 1.2em;
+            span{
+              color: #2d7d7d;
+            }
+          }
+        }
+      }
+      .product-row{
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 100%;
+        .col-6{
+          margin-bottom: 45px;
+
+          .product{
+            display: flex;
+            flex-direction: column;
+            transition: 0.25s;
+            max-width: 380px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 15px;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover{
+              box-shadow: 0 0 22px -15px rgba(0,0,0,1);
+            }
+
+            &-img{
+              .img{
+                width: 100%;
+                height: auto;
+              }
+            }
+            &-title{
+              margin-top: 10px;
+              text-align: center;
+              display: block;
+              width: 100%;
+              font-weight: 600;
+              min-height: 3.25em;
+              .title{
+                font-weight: bold;
+                text-transform: uppercase;
+                font-size: 18px;
+                max-height: 3em;
+                cursor:pointer;
+                text-decoration: none;
+                color: black;
+                position: relative;
+
+                &:hover{
+                  color: #2d7d7d;
+                  transition: 0.25s;
+                }
+              }
+            }
+          }
+        }
+        .show{
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 320px) {
+  .container{
+    .baner {
+      margin-bottom: 30px;
+      &-img{
+        background-image: url(https://noa.ua/wp-content/uploads/2023/08/baner-sajt-mob.jpg);
+      }
+    }
+    .prod-sec {
+      .container {
+        padding-left: 10px;
+        padding-right: 10px;
+        .row {
+          .col-12 {
+            .product-title {
+              font-size: 22px;
+            }
+          }
+          .col-6{
+            .product{
+              &-title{
+                .title{
+                  font-size: 15px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1240px) and (min-width: 768px) {
+  .container {
+    .baner {
+      &-img {
+        height: 635px;
+        margin-left: -140px;
+        background-image: url(https://firebasestorage.googleapis.com/v0/b/noa-ua-45893.appspot.com/o/images%2Fthai-site-banner-copy.png-nov-1550x630.png?alt=media&token=131a7b1b-8278-4dc6-a4b2-6f2bf82f6a37);
+      }
+    }
+  }
+
+  .prod-sec{
+    .container{
+      padding-left: 30px!important;
+      padding-right: 30px!important;
+    }
+  }
+
+  .text-center{
+    font-size: 32px!important;
+  }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 1240px) {
+  .container {
+    .baner {
+      &-img {
+        height: 1080px;
+        margin-left: -610px;
+        background-image: url(https://firebasestorage.googleapis.com/v0/b/noa-ua-45893.appspot.com/o/images%2Fthai-site-banner-copy.png-nov-1550x630.png?alt=media&token=131a7b1b-8278-4dc6-a4b2-6f2bf82f6a37);
+      }
+    }
+  }
+}

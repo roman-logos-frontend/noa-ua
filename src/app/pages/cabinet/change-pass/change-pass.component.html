@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="cont">
+    <div class="title_head">
+      <div class="title">
+        <h5>Зміна паролю</h5>
+      </div>
+      <form [formGroup]="passwordForm">
+        <div class="row">
+          <input type="password" placeholder="*Ваш поточний пароль" formControlName="oldPassword">
+          <input type="password" placeholder="*Новий пароль" formControlName="newPassword">
+          <input type="password" placeholder="*Повторіть пароль" formControlName="confirmPassword">
+        </div>
+        <div class="col">
+          <button type="button" class="changeButton">ЗБЕРЕГТИ ЗМІНИ</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

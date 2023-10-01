@@ -1,0 +1,90 @@
+<div class="container">
+  <form [formGroup]="productForm" name="productForm" (ngSubmit)="addProduct()">
+    <div class="box">
+      <button class="box_btn" type="button" (click)="toggleOpenForm()">{{ isOpen ? 'Close category form' : 'Open category form'}}</button>
+      <ng-container>
+        <div class="box_info" [ngClass]="{'show': !isOpen}">
+          <div>
+            <select formControlName="category" #category>
+              <option [ngValue]="category" *ngFor="let category of adminCategories">{{category.name}}</option>
+            </select>
+          </div>
+          <div class="box_info_div">
+            <input class="box_info_div_input" formControlName="name" name="name" style="margin-right: 20px;" type="text"
+                   placeholder="*Назва">
+            <input class="box_info_div_input" formControlName="path" name="path" type="text" placeholder="*Шлях">
+          </div>
+          <textarea class="box_info_textArea" formControlName="description" name="description"
+                    placeholder="*Інгрідієнти">
+          </textarea>
+          <textarea class="box_info_textArea" formControlName="allergies" name="allergies"
+                    placeholder="*Алергени">
+          </textarea>
+          <div class="box_info_div">
+            <input class="box_info_div_input" formControlName="weight" name="weight" type="text" id="weight"
+                   placeholder="*Вага" style="margin-right: 20px;">
+            <input class="box_info_div_input" formControlName="price" name="price" type="number" id="price"
+                   placeholder="*Ціна">
+          </div>
+          <ng-container *ngIf="!isUploaded">
+            <input class="box_info_inp" type="file" (change)="upload($event)">
+            <div class="progress" style="margin-bottom: 10px;">
+              <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                   aria-valuemax="100" [style.width.%]="uploadPercent"></div>
+            </div>
+          </ng-container>
+
+          <ng-container *ngIf="isUploaded">
+            <div class="ngContainer">
+              <img [src]="valueByControl('imagePath')">
+              <button type="button" class="btn-delete" (click)="deleteImage()">delete</button>
+            </div>
+          </ng-container>
+          <div>
+            <button class="box_btn" type="submit" [disabled]="productForm.invalid">ЗБЕРЕГТИ</button>
+          </div>
+        </div>
+      </ng-container>
+
+    </div>
+    <table>
+      <thead>
+      <th>№</th>
+      <th>Category</th>
+      <th>Name</th>
+      <th>Path</th>
+      <th>Description</th>
+      <th>allergies</th>
+      <th>Weight</th>
+      <th>Price</th>
+      <th>Image</th>
+      <th>Action</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let product of adminProducts">
+        <td>{{product.id | slice:0:10}}</td>
+        <td>{{product.category.name | slice:0:30}}</td>
+        <td>{{product.name | slice:0:30}}</td>
+        <td>{{product.path | slice:0:30}}</td>
+        <td>
+          {{product.description | slice:0:30}}
+          <span *ngIf="product.description.length > 30"></span>
+        </td>
+        <td>
+          {{product.allergies | slice:0:30}}
+        </td>
+        <td>{{product.weight}}</td>
+        <td>{{product.price}}</td>
+        <td>
+          <img [src]="product.imagePath" height="50px">
+        </td>
+        <td class="td_btn">
+          <input class="button" (click)="editProduct(product)" type="button" value="Редагувати">
+          <input class="button" [disabled]="editStatus" (click)="deleteProduct(product)" type="button"
+                 value="Видалити">
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </form>
+</div>

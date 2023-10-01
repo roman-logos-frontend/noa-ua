@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="menu">
+    <div class="title" (click)="change()" [ngClass]="{activeTitle}">{{activePage}}</div>
+    <ul class="list" (click)="change()" [ngClass]="{activeList}">
+      <li class="list-item">
+        <a [routerLink]="[ 'profile' ]" [ngClass]="{active}" routerLinkActive="active" (click)="selectName('Особисті дані')">Особисті дані</a>
+      </li>
+      <li class="list-item">
+        <a [routerLink]="[ 'history' ]" [ngClass]="{active}" routerLinkActive="active" (click)="selectName('Історія замовлень')">Історія замовлень</a>
+      </li>
+      <li class="list-item">
+        <a [routerLink]="[ 'liked' ]"  [ngClass]="{active}" routerLinkActive="active" (click)="selectName('Улюблені')">Улюблені</a>
+      </li>
+      <li class="list-item">
+        <a [routerLink]="[ 'changePass' ]" [ngClass]="{active}" routerLinkActive="active" (click)="selectName('Зміна паролю')">Зміна паролю</a>
+      </li>
+    </ul>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

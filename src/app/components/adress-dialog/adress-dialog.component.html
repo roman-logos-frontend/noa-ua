@@ -1,0 +1,65 @@
+<div class="address-container">
+  <div class="address-items">
+    <div class="title">Адреса</div>
+    <form [formGroup]="userAddress">
+      <div class="select">
+        <select name="select_city" class="SelectBox SumoUnder" tabindex="-1" formControlName="city">
+          <option value="" selected="">Виберіть місто</option>
+          <option value="Львів">Львів</option>
+          <option value="Брюховичі">Брюховичі</option>
+          <option value="Великі Грибовичі">Великі Грибовичі</option>
+          <option value="Дубляни">Дубляни</option>
+          <option value="Жирівка">Жирівка</option>
+          <option value="Зимна Вода">Зимна Вода</option>
+          <option value="Зубра">Зубра</option>
+          <option value="Ков'ярі">Ков'ярі</option>
+          <option value="Кротошин">Кротошин</option>
+          <option value="Лапаївка">Лапаївка</option>
+          <option value="Липники">Липники</option>
+          <option value="Малехів">Малехів</option>
+          <option value="Малечковичі">Малечковичі</option>
+          <option value="Малі Грибовичі">Малі Грибовичі</option>
+          <option value="Муроване">Муроване</option>
+          <option value="Наварія">Наварія</option>
+          <option value="Пасіки-Зубрицькі">Пасіки-Зубрицькі</option>
+          <option value="Пустомити">Пустомити</option>
+          <option value="Рудно">Рудно</option>
+          <option value="Рясне-Руське">Рясне-Руське</option>
+          <option value="Сокільники">Сокільники</option>
+          <option value="Солонка">Солонка</option>
+          <option value="Холодновідка">Холодновідка</option>
+        </select>
+      </div>
+      <div class="row">
+        <div class="col-12 col-sm-8">
+          <input type="text" class="input" placeholder="*Введіть вулицю доставки" formControlName="street">
+        </div>
+        <div class="col-12 col-sm-4">
+          <input type="text" class="input" placeholder="* № будинку" formControlName="numberHouse">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <input type="text" class="input" placeholder="№ квартири" formControlName="numberApartments">
+        </div>
+        <div class="col-6">
+          <input type="text" class="input" placeholder="Під'їзд" formControlName="entrance">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <input type="text" class="input" placeholder="Поверх" formControlName="floor">
+        </div>
+        <div class="col-6">
+          <input type="text" class="input" placeholder="Домофон" formControlName="intercom">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <button class="btn" type="submit" (click)="updateUserData()">Зберегти</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <button class="close" (click)="closeDialog()"></button>
+</div>

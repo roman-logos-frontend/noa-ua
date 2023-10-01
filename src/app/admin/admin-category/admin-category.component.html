@@ -1,0 +1,62 @@
+<div class="container">
+  <form [formGroup]="categoryForm" (ngSubmit)="addCategory()">
+    <div class="box">
+      <button class="box_btn" type="button" (click)="changeStatus()">ДОДАТИ КАТЕГОРІЮ</button>
+      <div class="box_info" *ngIf="!boxStatus">
+        <select formControlName="type">
+          <option>Оберіть тип</option>
+          <option>Main</option>
+          <option>Thai</option>
+        </select>
+        <div>
+        <input class="box_info_input" formControlName="name" style="margin-right: 5px;" type="text"
+               placeholder="*Назва">
+        <input class="box_info_input" formControlName="path" type="text" placeholder="*Шлях">
+        </div>
+
+        <ng-container *ngIf="!isUploaded">
+          <input class="box_info_inp" type="file" (change)="upload($event)">
+          <div class="progress" style="margin-bottom: 10px;">
+            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                 aria-valuemax="100" [style.width.%]="uploadPercent"></div>
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="isUploaded">
+          <div class="ngContainer">
+            <img [src]="valueByControl('imagePath')">
+            <button type="button" class="btn-delete" (click)="deleteImage()">delete</button>
+          </div>
+        </ng-container>
+        <div>
+          <button class="box_btn" type="submit" [disabled]="categoryForm.invalid">ЗБЕРЕГТИ</button>
+        </div>
+      </div>
+    </div>
+    <table>
+      <thead>
+      <th>№</th>
+      <th>Тип</th>
+      <th>Назва</th>
+      <th>Шлях</th>
+      <th>Картинка</th>
+      <th>Дії</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let category of adminCategories">
+        <td>{{category.id}}</td>
+        <td>{{category.type}}</td>
+        <td>{{category.name}}</td>
+        <td>{{category.path}}</td>
+        <td>
+          <img [src]="category.imagePath" height="50px">
+        </td>
+        <td class="td_btn">
+          <input class="button" (click)="editCategory(category)" type="button" value="Редагувати">
+          <input class="button" (click)="deleteCategory(category)" type="button" value="Видалити">
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </form>
+</div>

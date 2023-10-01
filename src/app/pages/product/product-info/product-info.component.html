@@ -1,0 +1,45 @@
+
+<nav class="breadcrumbs">
+  <a [routerLink]="[ '' ] " class="breadcrumbs_link">NOA</a>
+  <a [routerLink]="[ '/product/' +currentProduct.category.path ] " class="breadcrumbs_link">{{currentProduct.category.path}}</a>
+  <span>{{ currentProduct.name }}</span>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <img [srcset]="currentProduct.imagePath" alt="">
+    </div>
+    <div class="col">
+      <div class="product_details">
+        <div class="weight">
+          {{currentProduct.weight}}
+        </div>
+        <h1 class="title">{{currentProduct.name}}</h1>
+        <div class="description">
+          {{currentProduct.description}}
+        </div>
+        <div class="allergies">
+          {{currentProduct.allergies}}
+        </div>
+        <hr>
+        <div class="controls">
+          <div class="input_button">
+            <button (click)="productCount(currentProduct, false)" type="button">-</button>
+            <input [value]="currentProduct.count" max="999" min="1" readonly>
+            <button (click)="productCount(currentProduct, true)" type="button">+</button>
+          </div>
+          <div class="price">
+            <b>{{currentProduct.price * currentProduct.count}}</b>
+            грн
+          </div>
+        </div>
+        <div class="button">
+          <button class="btn green" (click)="addToBasket(currentProduct)">Додати в кошик</button>
+          <button class="btn white">Швидке Замовлення</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

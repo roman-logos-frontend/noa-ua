@@ -1,0 +1,399 @@
+.space{
+  height: 60px;
+}
+.container{
+  width: 100%;
+  max-width: 1840px;
+  padding-left: 60px;
+  padding-right: 60px;
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    .space-md{
+      height: 90px;
+    }
+    .col-12{
+      max-width: 100%;
+      flex: 0 0 100%;
+      .title{
+        text-align: center !important;
+        margin-bottom: 60px;
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 1.2em;
+        span{
+          color: #2d7d7d;
+        }
+      }
+    }
+
+    .pay{
+      display: block;
+      width: 100%;
+      padding: 0 30px;
+      &-map-block{
+        position: relative;
+        display: block;
+        width: 100%;
+        .pay-input{
+          position: absolute;
+          top: 20px;
+          left: 30px;
+          width: 505px;
+          z-index: 1;
+          input{
+            font-size: 16px;
+            width: 100%;
+            margin: 0;
+            height: 54px;
+            color: #2D2C2C;
+            border: 1px solid #ECECEC;
+            background-color: #fff;
+            line-height: 51px;
+            padding: 0 20px;
+            border-radius: 3px;
+            transition: 0.25s;
+            text-overflow: ellipsis;
+            outline: none;
+          }
+        }
+        #map{
+          width: 100%;
+          height: 530px;
+        }
+      }
+
+      .bike{
+        display: block;
+        width: 100%;
+        &-block{
+          display: flex;
+          width: 100%;
+          margin-bottom: 60px;
+
+          &:last-child{
+            margin-bottom: 0;
+          }
+
+          .bike-imgs{
+            position: relative;
+            width: 98px;
+            max-width: 98px;
+            margin-right: 40px;
+            top: 20px;
+          }
+          .bike-cont{
+            display: block;
+            width: 100%;
+            font-size: 20px;
+            line-height: 1.2em;
+            .title{
+              letter-spacing: 0.03em;
+              margin-bottom: 15px;
+              font-weight: 500;
+              font-size: 26px;
+              line-height: 1.2em;
+            }
+
+            ul{
+              padding-left: 5px;
+              list-style: none;
+              li{
+                position: relative;
+                padding-left: 25px;
+                margin-bottom: 10px;
+                color: #6D6D6D;
+                font-size: 16px;
+                line-height: 147%;
+                &:before{
+                  content: "";
+                  position: absolute;
+                  left: 0;
+                  top: 10px;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                }
+                span{
+                  color: #000000;
+                  font-weight: 500;
+                }
+              }
+            }
+          }
+        }
+        .green{
+          .title{
+            color: #599921;;
+          }
+          li:before {
+            border: 2px solid #599921;;
+          }
+        }
+        .yellow{
+          .title{
+            color: #ffcc00;
+          }
+          li:before {
+            border: 2px solid #ffcc00;;
+          }
+        }
+        .red{
+          .title{
+            color: #EF2F3D;
+          }
+          li:before {
+            border: 2px solid #EF2F3D;;
+          }
+        }
+      }
+    }
+    .pay-only-text{
+      position: relative;
+      display: block;
+      width: 100%;
+      margin-top: 60px;
+      padding: 0 75px;
+      .text{
+        color: #6D6D6D;
+        line-height: 1.5em;
+        font-size: 18px;
+        h1{
+          color: #2D2C2C;
+          font-size: 46px;
+          line-height: 1.2em;
+        }
+        p{
+          color: #6d6d6d;
+          line-height: 1.5em;
+          font-size: 18px;
+        }
+      }
+    }
+
+    .col-title{
+      font-size: 42px;
+      line-height: 1.2em;
+      font-weight: 700;
+    }
+
+    .pay-main{
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-top: 60px;
+      margin-bottom: 60px;
+      .pay-page-block{
+        position: relative;
+        display: flex;
+        width: 33%;
+        .pay-imgs{
+          position: relative;
+          margin-right: 30px;
+        }
+        .pay-cont{
+          position: relative;
+          display: block;
+          width: 310px;
+          .title{
+            font-size: 22px;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            margin-bottom: 15px;
+            line-height: 1.3em;
+          }
+          .text{
+            letter-spacing: 0.03em;
+            line-height: 1.5em;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 320px) {
+  .space{
+    height: 30px;
+  }
+
+  .container{
+    padding-left: 15px;
+    padding-right: 15px;
+    .row{
+      .col-12{
+        .title{
+          margin-bottom: 20px;
+          font-size: 24px;
+        }
+      }
+      .pay{
+        padding: 0;
+        .row {
+          margin-right: -12px;
+          margin-left: -12px;
+          .pay-input {
+            width: 90%;
+            left: 20px;
+          }
+        }
+      }
+      .bike{
+        .bike-block{
+          margin-bottom: 20px;
+          .bike-imgs{
+            margin-right: 20px;
+          }
+          .bike-cont{
+            font-size: 14px;
+            .title{
+              font-size: 20px;
+            }
+            ul{
+              li{
+                font-size: 12px;
+                padding-left: 16px;
+                &:before{
+                  width: 8px;
+                  height: 8px;
+                  top: 7px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .pay-only-text{
+        padding: 0;
+        margin-top: 20px;
+        .text{
+          font-size: 16px;
+          h1{
+            font-size: 23px;
+          }
+          p{
+            font-size: 15px;
+          }
+        }
+      }
+      .space-md{
+        height: 30px;
+      }
+      .pay-main{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        .pay-page-block{
+          margin-bottom: 20px;
+          width: 100%;
+          .pay-imgs{
+            margin-right: 20px;
+          }
+          .pay-cont{
+            width: 100%;
+            .title{
+              font-size: 18px;
+              margin-bottom: 5px;
+            }
+            .text{
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 768px) {
+  .space{
+    height: 60px;
+  }
+
+  .container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 720px;
+    .row{
+      .col-12{
+        .title{
+          margin-bottom: 40px;
+          font-size: 38px;
+        }
+      }
+      .pay{
+        padding: 0;
+        .row {
+          margin-right: -12px;
+          margin-left: -12px;
+        }
+      }
+      .bike{
+        .bike-block{
+          margin-bottom: 40px;
+          .bike-cont{
+            font-size: 18px;
+            .title{
+              font-size: 24px;
+            }
+            ul{
+              li{
+                font-size: 16px;
+                padding-left: 20px;
+                &:before{
+                  width: 8px;
+                  height: 8px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .pay-only-text{
+        margin-top: 40px;
+        padding: 0;
+        .text{
+          font-size: 16px;
+          h1{
+            font-size: 40px;
+          }
+          p{
+            font-size: 16px;
+          }
+        }
+      }
+      .space-md{
+        height: 80px;
+      }
+      .text-center{
+        font-size: 38px;
+      }
+      .pay-main{
+        margin-top: 40px;
+        margin-bottom: 40px;
+        .pay-page-block{
+          margin-bottom: 20px;
+          width: 50%;
+          .pay-imgs{
+            margin-right: 20px;
+          }
+          .pay-cont{
+            width: 200px;
+            .title{
+              font-size: 20px;
+            }
+            .text{
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

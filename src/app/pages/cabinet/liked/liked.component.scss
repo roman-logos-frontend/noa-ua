@@ -1,0 +1,176 @@
+.container {
+  padding: 0 30px;
+  max-width: 100%;
+  box-sizing: border-box;
+  .cont{
+    justify-content: space-around;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    padding: 0 45px;
+    .box {
+      &_row {
+        display: flex;
+        flex-wrap: wrap;
+
+        &_col {
+          flex: 0;
+          margin-bottom: 30px;
+          margin-left: 29px;
+          margin-right: 29px;
+
+          .product {
+            width: 380px;
+            height: 586px;
+            padding-right: 15px;
+            padding-left: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            transition: 0.3s;
+
+            &:hover{
+              box-shadow: 0px 0px 22px -15px rgba(0,0,0,1);
+            }
+
+            &_img_wrap {
+              cursor: pointer;
+              position: relative;
+              img{
+                max-width: 100%;
+              }
+              .product_top-right{
+                width: 100%;
+                top: 0;
+                right: 0;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                .fav-btn{
+                  border: none;
+                  background-color: inherit;
+                  width: 23px;
+                  height: 20px;
+                  line-height: 20px;
+                  display: inline-flex;
+                  align-items: center;
+                  justify-content: center;
+                  cursor: pointer;
+                  transition: .25s;
+                  background-image: url(//noa.ua/wp-content/themes/tomatina/img/icons/love-empty-icon.svg);
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                }
+                .activeFav{
+                  background-image: url(//noa.ua/wp-content/themes/tomatina/img/icons/love-icon.svg);
+                }
+              }
+            }
+
+            &_title {
+              display: flex;
+              justify-content: space-between;
+              width: 100%;
+
+              .blog_name, .blog_weight {
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 1.3em;
+                transition: 0.3s;
+              }
+              .blog_name:hover{
+                cursor: pointer;
+                color: #2d7d7d;
+              }
+            }
+
+            &_name {
+              margin: 20px;
+              line-height: 1.4em;
+              text-transform: uppercase;
+              transition: 0.35s;
+
+              &:hover {
+                color: #b5d8f7;
+              }
+            }
+
+            &_controls,
+            &_info {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              width: 100%;
+
+              &_btn {
+                color: white;
+                background-color: #2d7d7d;
+                border: 2px solid #2d7d7d;
+                height: 100%;
+                text-decoration: none;
+                text-transform: uppercase;
+                cursor: pointer;
+                border-radius: 10px;
+                padding: 10px 20px;
+                font-size: 14px;
+                line-height: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: 0.3s;
+                font-weight: 700;
+                letter-spacing: .15em;
+
+                &:hover {
+                  background-color: transparent;
+                  transition: 0.35s;
+                  color: #2d7d7d;
+                }
+              }
+            }
+            .input_button {
+              display: inline-flex;
+              align-items: center;
+              border-radius: 10px;
+              color: #252525;
+              font-size: 16px;
+              line-height: 16px;
+              border: none;
+
+              button {
+                width: 30px;
+                height: 30px;
+                font-size: 18px;
+                font-weight: 700;
+                cursor: pointer;
+                transition: 0.35s;
+                line-height: 24px;
+                color: #5a5a5a;
+                background-color: #F5F5F5;
+                border-radius: 5px;
+                padding-bottom: 4px;
+                margin: 4px;
+                border: none;
+                &:hover{
+                  background-color: #2d7d7d;
+                  color: white;
+                }
+              }
+
+              input {
+                width: 30px;
+                height: 44px;
+                font-weight: 600;
+                text-align: center;
+                border: none;
+                outline: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

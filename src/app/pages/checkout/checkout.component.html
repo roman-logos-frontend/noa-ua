@@ -1,0 +1,150 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="h2 title text-center product-title">
+        Оформлення замовлення
+      </div>
+    </div>
+  </div>
+  <form class="form" [formGroup]="orderForm" (ngSubmit)="addOrder()">
+    <div class="row">
+      <div class="col-xl-6">
+        <div class="delivery-form">
+          <div class="form-group">
+            <div class="form-title">
+              <b>1.</b>
+              Контактні дані
+            </div>
+            <div class="row">
+              <div class="col-6 col-md-6">
+                <input type="text" placeholder="Імя" formControlName="firstName">
+              </div>
+              <div class="col-6 col-md-6">
+                <input type="text" placeholder="Прізвище" formControlName="lastName">
+              </div>
+              <div class="col-12 col-md-12">
+                <input type="text" placeholder="Номер телефону" formControlName="phoneNumber">
+              </div>
+              <div class="col-12 col-md-12">
+                <input type="email" placeholder="Емейл" formControlName="email">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-title">
+              <b>2.</b>
+              Інформація про доставку
+            </div>
+            <div class="toggle-blocks">
+              <div class="row">
+                <div class="menu">
+                  <div class="title" (click)="change()" [ngClass]="{activeTitle}">{{activePage}}</div>
+                  <ul class="list" (click)="change()" [ngClass]="{activeList}">
+                    <li class="list-item">
+                      <a [ngClass]="{active}" (click)="selectName('ТРЦ Victoria Gardens, Кульпарківська 226А')">ТРЦ Victoria Gardens, Кульпарківська 226А</a>
+                    </li>
+                    <li class="list-item">
+                      <a [ngClass]="{active}" (click)="selectName('Староєврейська 4')">Староєврейська 4</a>
+                    </li>
+                    <li class="list-item">
+                      <a [ngClass]="{active}" (click)="selectName('Крива Липа 8')">Крива Липа 8</a>
+                    </li>
+                    <li class="list-item">
+                      <a [ngClass]="{active}" (click)="selectName('ТРЦ Spartak, Мазепи 1Б')">ТРЦ Spartak, Мазепи 1Б</a>
+                    </li>
+                    <li class="list-item">
+                      <a [ngClass]="{active}" (click)="selectName('ТРЦ King Cross, Стрийська, 30')">ТРЦ King Cross, Стрийська, 30</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-sm-6">
+                  <input type="text" class="input calendar" name="self_delivery_date" placeholder="Дата доставки" formControlName="date">
+                </div>
+                <div class="col-sm-6">
+                  <div class="menu">
+                    <div class="title">Часовий інтервал</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-6">
+        <div class="delivery-form">
+          <div class="form-title">Ваше замовлення</div>
+          <div class="cart" >
+            <div class="cart_prod" *ngFor="let product of basket">
+              <div class="prod">
+                <a class="prod_img">
+                  <img [src]="product.imagePath" [routerLink]="[ '/product/'+product.category.path,  product.id ]" class="img">
+                </a>
+                <div class="prod_desc">
+                  <a class="prod_desc_title" [routerLink]="[ '/product/'+product.category.path,  product.id ]">{{product.name}}</a>
+                  <div class="prod_desc_controls">
+                    <button type="button" (click)="productCount(product, false)">-</button>
+                    <input class="input" [value]="product.count" max="999" min="1" readonly>
+                    <button type="button" (click)="productCount(product, true)">+</button>
+                  </div>
+                  <div class="prod_desc_price">
+                    <b class="price">{{product.price * product.count}}</b>
+                    грн
+                  </div>
+                  <button class="btn_delete" (click)="deleteProduct(product)"></button>
+                </div>
+              </div>
+            </div>
+            <div class="cart_prod">
+              <div class="prod">
+                <div class="prod_desc">
+                  <a class="prod_desc_title">Прибори</a>
+                  <a class="prod_desc_text">Вкажіть кількість осіб, на яке робите замовлення</a>
+                  <div class="prod_desc_controls">
+                    <button type="button">-</button>
+                    <input class="input" max="999" min="1" readonly formControlName="countHolders">
+                    <button type="button">+</button>
+                  </div>
+                  <div class="prod_desc_price">
+                    <b class="price">Безкоштовно</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-title">
+              <b>3.</b>
+              Інформація про оплату
+            </div>
+            <div class="payBlock">
+              <div class="rest">
+                <div class="text"> Решта з </div>
+                <input class="inp" type="number" placeholder="Сума" formControlName="cash">
+                <label class="checkbox">
+                  <input type="checkbox">
+                  <span>Без решти</span>
+                </label>
+              </div>
+            </div>
+            <div class="order">
+              <div class="order_main">
+                <div class="order_main_price">
+                  <div class="main_price">
+                    <div class="title">Сума:</div>
+                    <div class="all_price">
+                      <span>
+                        <b class="all-product-price-el">{{total}}</b>
+                        грн
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="order_btn">оформити замовлення</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

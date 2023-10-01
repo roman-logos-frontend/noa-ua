@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import 'app/shared/styles/theme-material';
+
+body{
+  overflow: visible;
+  background-image: url("https://noa.ua/wp-content/themes/tomatina/img/bg-w-o3.png");
+  background-size: cover;
+}

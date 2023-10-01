@@ -1,0 +1,119 @@
+.address-container{
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  position: relative;
+  text-align: left;
+  background-color: #fff;
+  border-radius: 6px;
+  .address-items{
+    text-align: center !important;
+    padding: 60px 70px 70px 70px;
+    overflow: hidden;
+    font-size: 20px;
+    line-height: 1.2em;
+    .title{
+      margin-bottom: 15px;
+      font-weight: 700;
+      font-size: 34px;
+      line-height: 1.2em;
+    }
+    .select{
+      margin-bottom: 20px;
+      display: block;
+      width: 100%;
+      cursor: pointer;
+      z-index: 3;
+      select{
+        padding: 13px 40px 12px 20px;
+        height: 100%;
+        width: 100%;
+        border: 1px solid #ECECEC;
+        outline: none;
+        line-height: 51px;
+        cursor: pointer;
+        transition: 0.25s;
+        font-weight: 300;
+        font-size: 16px;
+        letter-spacing: 0.48px;
+        option{
+          font-size: 16px;
+          height: 54px;
+          border-radius: 5px !important;
+          border: 1px solid #ececec !important;
+          text-align: left;
+          &:hover{
+            color: #2d7d7d;
+            background-color: #fff;
+          }
+        }
+      }
+    }
+    .input {
+      font-size: 16px;
+      height: 54px;
+      color: #2D2C2C;
+      border: 1px solid #ECECEC;
+      background-color: #fff;
+      line-height: 51px;
+      padding: 0 20px;
+      border-radius: 3px;
+      transition: 0.25s;
+      text-overflow: ellipsis;
+      width: 100%;
+      margin-bottom: 20px;
+      outline: none;
+    }
+    .btn{
+      width: 100%;
+      height: 54px;
+      color: #fff;
+      background-color: #2d7d7d;
+      border: 2px solid #2d7d7d;
+      border-radius: 6px;
+      position: relative;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 700;
+      padding: 10px 25px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      &:hover{
+        color: #2d7d7d;
+        background-color: #fff;
+      }
+    }
+  }
+  .close{
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    width: 47px;
+    height: 47px;
+    background-color: #2d7d7d;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    transition: 0.25s;
+    cursor: pointer;
+    z-index: 2;
+    border: 1px solid #2d7d7d;
+    &:hover{
+      background-color: #fff;
+    }
+    &:before{
+      content: "\02715";
+      background-color: #2d7d7d;
+      transition: 0.25s;
+    }
+    &:hover:before{
+      color: #2d7d7d;
+      background-color: #fff;
+    }
+  }
+}

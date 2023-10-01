@@ -1,0 +1,61 @@
+.container {
+  width: 100%;
+
+  .box {
+    width: 50%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &_info {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      label {
+        padding-bottom: 10px;
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      &_input {
+        width: 70%;
+        height: 45px;
+        padding: 10px;
+        border: 2px solid grey;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        outline: none;
+        font-size: 17px;
+        color: grey;
+
+        &:focus{
+          border: none;
+          outline: 5px solid #b5d8f7;
+        }
+      }
+
+      &_button {
+        cursor: pointer;
+        width: 70%;
+        background-color: green;
+        height: 50px;
+        margin-top: 20px;
+        color: black;
+        font-size: 25px;
+        border-radius: 5px;
+        border: 1px solid transparent;
+
+        &:hover{
+          color: green;
+          background-color: transparent;
+          border: 1px solid green;
+          transition-duration: 0.35s;
+        }
+      }
+
+    }
+  }
+}

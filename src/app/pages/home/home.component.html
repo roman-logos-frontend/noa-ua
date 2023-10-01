@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="baner">
+    <a href="" class="baner-img"></a>
+  </div>
+  <div class="prod-sec">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="h2 title text-center product-title">
+            Особлива
+            <span>Азія</span>
+          </div>
+        </div>
+      </div>
+      <div class="row product-row">
+        <div class="col-6 col-lg-4 col-xl-3" *ngFor="let category of categories" [ngClass]="{show: category.type ==='Thai'}">
+          <div class="product" *ngIf="category.type === 'Main' " [routerLink]="[ '/product/'+category.path]">
+            <div class="product-img">
+              <img class="img" [src]="category.imagePath">
+            </div>
+            <div class="product-title">
+              <a class="title">{{category.name}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+app/
+    components/
+      header.component
+      footer.component
+    pages/
+      home.component
+      product.component
+      product-info.component
+      delivery.component
+      donate.component
+      about.component
+      offerta.component
+      job.component
+      job-info.component
+      contact.component
+      basket.component
+    shared/
+      styles/
+        _variables.scss
+        _mixins.scss
+        _base.scss
+      interfaces/
+      pipes/
+      directives/
+      guards/
+      services/
+
+    admin.component
+      admin-category.component
+      admin-product.component
+      admin-orders.component
+

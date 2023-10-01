@@ -1,0 +1,126 @@
+.container {
+  width: 100%;
+
+  .box {
+    &_btn {
+      width: 250px;
+      height: 60px;
+      border: none;
+      border-radius: 10px;
+      background-color: #b5d8f7;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 35px;
+    }
+
+    &_info {
+      margin-bottom: 25px;
+
+      select {
+        width: 250px;
+        height: 50px;
+        border: 2px solid grey;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+
+      .box_info_div {
+        display: flex;
+        justify-content: space-between;
+        &_input {
+          width: 100%;
+          height: 45px;
+          padding: 10px;
+          border: 2px solid grey;
+          border-radius: 5px;
+          margin-bottom: 10px;
+          outline: none;
+          font-size: 17px;
+          color: grey;
+        }
+      }
+
+      &_inp, &_textArea {
+        width: 100%;
+        height: 45px;
+        padding: 7px;
+        border: 2px solid grey;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        outline: none;
+        font-size: 17px;
+        color: grey;
+        resize: none;
+      }
+
+      &_inp{
+        padding: 4px;
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead {
+    border-top: 1px solid grey;
+  }
+
+  tr,
+  th,
+  td {
+    border-bottom: 1px solid grey;
+    padding: 15px;
+    font-size: 18px;
+    text-align: start;
+    font-weight: 900;
+  }
+
+  td {
+    color: grey;
+    font-weight: 300;
+  }
+
+  .td_btn {
+    display: flex;
+    flex-direction: column;
+    border: none;
+  }
+
+  .button {
+    background-color: transparent;
+    color: #b5d8f7;
+    cursor: pointer;
+  }
+
+  label {
+    padding-right: 10px;
+    font-size: 1rem;
+  }
+
+  .ngContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .btn-delete {
+      width: 100px;
+      height: 50px;
+      background-color: red;
+      font-size: 19px;
+      font-weight: 600;
+      border-radius: 6px;
+      margin: 10px 0;
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  .show{
+    display: none;
+  }
+}

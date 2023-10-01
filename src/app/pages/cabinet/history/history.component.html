@@ -1,0 +1,26 @@
+<h5 class="h5">Історія замовлень</h5>
+<table>
+  <thead>
+    <tr>
+      <th>№замовлення</th>
+      <th>Дата та час</th>
+      <th>Адреса</th>
+      <th>Сума</th>
+      <th>Статус</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let order of orderData">
+    <tr *ngIf="order.userUID === user">
+      <td></td>
+      <td>{{order.data | date:'dd.MM.YYYY h.mm'}}</td>
+      <td>{{order.address}}</td>
+      <td><b>{{order.total}}</b></td>
+      <td>{{order.status}}</td>
+    </tr>
+    <tr *ngFor="let prod of order.orderProduct">
+      <td *ngIf="order.userUID === user"><img [src]="prod.imagePath" width="30px" alt=""></td>
+      <td *ngIf="order.userUID === user">{{prod.name}}</td>
+      <td *ngIf="order.userUID === user">{{prod.count}} шт</td>
+    </tr>
+  </tbody>
+</table>

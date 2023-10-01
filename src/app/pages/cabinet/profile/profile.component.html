@@ -1,0 +1,53 @@
+<div class="container">
+  <form [formGroup]="userForm">
+    <div class="formGroup">
+      <div class="title">
+        <i class="title_number">
+          <b>1</b>
+        </i>
+        <h5>Особисті дані</h5>
+      </div>
+      <div class="col">
+        <input type="text" placeholder="Імя" formControlName="firstName">
+        <input type="text" placeholder="Прізвище" formControlName="lastName">
+      </div>
+      <div class="row">
+        <input type="text" placeholder="Номер телефону" formControlName="phoneNumber">
+        <input type="email" placeholder="Емейл" formControlName="email">
+      </div>
+      <div class="title">
+        <i class="title_number">
+          <b>2</b>
+        </i>
+        <h5>Адреси</h5>
+      </div>
+      <div class="address">
+        <table>
+          <tbody>
+          <tr>
+            <td>
+              <span>{{city}}</span>
+            </td>
+            <td>
+                <span>{{street}}</span>,
+                <span>{{numberHouse}}</span>
+                кв.
+                <span>{{numberApartments}}</span><br>
+                під'їзд - <span>{{entrance}}</span>
+                поверх - <span>{{floor}}</span>
+                домофон - <span>{{intercom}}</span>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col">
+        <button (click)="openDialog()" type="button" class="addButton">ДОДАТИ АДРЕСУ</button>
+        <button type="button" class="changeButton" (click)="updateUserData()">ЗБЕРЕГТИ ЗМІНИ</button>
+      </div>
+      <div class="col" (click)="logout()">
+        <button type="button" class="exit">ВИХІД</button>
+      </div>
+    </div>
+  </form>
+</div>
